@@ -1,0 +1,86 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "Simple Tournament Generator"
+  },
+  "input": {
+    "enterPlayers": "Enter Players",
+    "playerCount": "{{count}} players",
+    "remove": "− Remove",
+    "add": "+ Add",
+    "placeholder": "Enter one name per line...",
+    "mode": "Tournament Format",
+    "swissRounds": "Rounds:",
+    "stations": "Stations:",
+    "shuffleOn": "Shuffle ON",
+    "shuffleOff": "Shuffle OFF",
+    "generate": "Generate Tournament"
+  },
+  "modes": {
+    "single-elimination": "Single Elimination",
+    "single-elimination-desc": "Lose once and you're out",
+    "double-elimination": "Double Elimination",
+    "double-elimination-desc": "Eliminated after 2 losses (losers bracket)",
+    "round-robin": "Round Robin",
+    "round-robin-desc": "Everyone plays everyone",
+    "swiss": "Swiss System",
+    "swiss-desc": "Matched by similar records",
+    "endless": "Endless Mode",
+    "endless-desc": "Equal matches, avoid rematches, play indefinitely"
+  },
+  "tournament": {
+    "playerCount": "{{count}} players",
+    "matchNumber": "Match #{{round}}",
+    "stationCount": "{{count}} st.",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "Ending after this",
+    "reserveEnd": "Schedule End",
+    "reset": "Back to Start",
+    "champion": "Champion",
+    "tiedFirst": "Tied for 1st",
+    "endlessHint": "Click the winner to auto-generate the next match.",
+    "endlessHintSub": "Press \"Back to Start\" when you're done.",
+    "winners": "Winners",
+    "losers": "Losers",
+    "grandFinal": "Grand Final",
+    "standings": "Standings",
+    "matchTable": "Match Table",
+    "round": "Round {{round}}",
+    "inProgress": "In Progress",
+    "matchHistory": "Match History"
+  },
+  "match": {
+    "bye": "(Bye)",
+    "draw": "Draw",
+    "drawResult": "Draw",
+    "winner": "Winner:",
+    "undo": "Undo",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "Name",
+    "wins": "W",
+    "losses": "L",
+    "draws": "D",
+    "matches": "GP"
+  },
+  "bracket": {
+    "final": "Final",
+    "semiFinal": "Semifinal",
+    "round": "Round {{round}}"
+  },
+  "policy": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "termsContent": "# Terms of Service\n\nLast updated: March 29, 2026\n\n## 1. Overview\n\nTestament (\"the Service\") is a free web application that helps generate tournament brackets.\n\n## 2. Terms of Use\n\n- The Service is free for both individuals and organizations.\n- No account registration is required.\n\n## 3. Disclaimer\n\n- The Service is provided without any warranty.\n- The operator is not liable for any damages arising from the use of this Service.\n- Availability and continuity of the Service are not guaranteed.\n\n## 4. Prohibited Activities\n\nThe following activities are prohibited:\n\n- Unauthorized access to or interference with the Service\n- Use for purposes that violate applicable laws\n\n## 5. Changes and Termination\n\nThe operator may change or terminate the Service without prior notice.\n\n## 6. Governing Law\n\nThese terms are governed by the laws of Japan.",
+    "privacyContent": "# Privacy Policy\n\nLast updated: March 29, 2026\n\n## 1. Information We Collect\n\nThis Service does not collect any personal information.\n\nData such as participant names you enter is processed only in your browser's memory and is not sent to any server.\n\n## 2. Analytics\n\nThis Service uses Cloudflare Web Analytics to understand usage patterns.\n\n- No cookies are used.\n- No personally identifiable information is collected.\n- Data collected: page views, browser and OS type, country/region, referring URL. IP addresses are anonymized.\n- Collected data is sent to Cloudflare, Inc. servers. Please refer to Cloudflare's privacy policy at cloudflare.com for details.\n\n## 3. Input Data\n\n- No persistence — All input data is deleted when you close the page.\n- No external transmission — Participant names and other input data are never sent externally.\n\n## 4. Third-Party Sharing\n\nInput data is never shared with third parties.\n\n## 5. Contact\n\nFor inquiries about this policy, please use the Issues section of the Service's repository.\n\n## 6. Changes\n\nThis policy may be changed without prior notice."
+  },
+  "samples": {
+    "player": "Player {{n}}"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "Auto"
+  }
+}

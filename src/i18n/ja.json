@@ -1,0 +1,86 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "簡易トーナメント生成ツール"
+  },
+  "input": {
+    "enterPlayers": "参加者を入力",
+    "playerCount": "{{count}} 人",
+    "remove": "− 削除",
+    "add": "+ 追加",
+    "placeholder": "1行に1人ずつ名前を入力...",
+    "mode": "対戦方式",
+    "swissRounds": "ラウンド数:",
+    "stations": "対戦台数:",
+    "shuffleOn": "シャッフル ON",
+    "shuffleOff": "シャッフル OFF",
+    "generate": "トーナメント生成"
+  },
+  "modes": {
+    "single-elimination": "シングルエリミネーション",
+    "single-elimination-desc": "負けたら即敗退",
+    "double-elimination": "ダブルエリミネーション",
+    "double-elimination-desc": "2敗で敗退（敗者復活あり）",
+    "round-robin": "ラウンドロビン（総当り）",
+    "round-robin-desc": "全員が全員と対戦",
+    "swiss": "スイス式",
+    "swiss-desc": "同成績同士でマッチング",
+    "endless": "とことん対戦",
+    "endless-desc": "試合数均等・連戦回避で無限に続行"
+  },
+  "tournament": {
+    "playerCount": "{{count}}人",
+    "matchNumber": "第{{round}}試合",
+    "stationCount": "{{count}}台",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "この試合で終了",
+    "reserveEnd": "終了予約",
+    "reset": "最初に戻る",
+    "champion": "優勝",
+    "tiedFirst": "同率首位",
+    "endlessHint": "勝者をクリックすると次の試合が自動生成されます。",
+    "endlessHintSub": "終了するときは「最初に戻る」を押してください。",
+    "winners": "勝者側",
+    "losers": "敗者側",
+    "grandFinal": "グランドファイナル",
+    "standings": "順位表",
+    "matchTable": "対戦表",
+    "round": "ラウンド {{round}}",
+    "inProgress": "進行中",
+    "matchHistory": "対戦履歴"
+  },
+  "match": {
+    "bye": "（不戦勝）",
+    "draw": "引分",
+    "drawResult": "引き分け",
+    "winner": "勝者:",
+    "undo": "取消",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "名前",
+    "wins": "勝",
+    "losses": "負",
+    "draws": "分",
+    "matches": "試合"
+  },
+  "bracket": {
+    "final": "決勝",
+    "semiFinal": "準決勝",
+    "round": "ラウンド {{round}}"
+  },
+  "policy": {
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "termsContent": "# 利用規約\n\n最終更新日: 2026年3月29日\n\n## 1. サービスの概要\n\nTestament（以下「本サービス」）は、トーナメント組み合わせの生成を支援する無償のウェブアプリケーションです。\n\n## 2. 利用条件\n\n- 本サービスは個人・法人を問わず無償でご利用いただけます。\n- ご利用にあたってアカウント登録は不要です。\n\n## 3. 免責事項\n\n- 本サービスはいかなる保証も行いません。\n- 本サービスの利用により生じたいかなる損害についても、運営者は責任を負いません。\n- サービスの可用性・継続性を保証するものではありません。\n\n## 4. 禁止事項\n\n以下の行為を禁止します。\n\n- 本サービスへの不正アクセスまたはサービスの妨害\n- 法令に違反する目的での利用\n\n## 5. 変更・終了\n\n運営者は予告なく本サービスの内容変更または終了を行う場合があります。\n\n## 6. 準拠法\n\n本規約は日本法に準拠します。",
+    "privacyContent": "# プライバシーポリシー\n\n最終更新日: 2026年3月29日\n\n## 1. 収集する情報\n\n本サービスは、個人情報を一切収集しません。\n\n入力いただいた参加者名などのデータは、お使いのブラウザのメモリ上でのみ処理されます。サーバーへの送信・保存は行いません。\n\n## 2. アクセス解析\n\n本サービスは、利用状況の把握を目的として Cloudflare Web Analytics を使用しています。\n\n- Cookie を使用しません。\n- 個人を特定する情報は収集しません。\n- 収集されるデータ: ページビュー数、使用ブラウザ・OS、国・地域情報、参照元URL。IPアドレスは匿名化処理されます。\n- 収集されたデータは Cloudflare, Inc. のサーバーに送信されます。Cloudflare のプライバシーポリシーは cloudflare.com をご確認ください。\n\n## 3. 入力データの取り扱い\n\n- 永続化なし — ページを閉じると入力データはすべて消去されます。\n- 外部送信なし — 参加者名等の入力データは外部に送信されません。\n\n## 4. 第三者提供\n\n入力データの第三者提供は行いません。\n\n## 5. お問い合わせ\n\n本ポリシーに関するお問い合わせは、本サービスのリポジトリの Issue よりご連絡ください。\n\n## 6. 変更\n\n本ポリシーは予告なく変更される場合があります。"
+  },
+  "samples": {
+    "player": "プレイヤー{{n}}"
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "system": "自動"
+  }
+}
