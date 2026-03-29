@@ -57,31 +57,41 @@ export function MatchCard({ match, onSelectWinner, onDraw, onUndo, allowDraw }: 
             match.player2 && onSelectWinner(match.id, match.player2)
           }
         />
-        {isReady && allowDraw && (
-          <button
-            onClick={() => onDraw?.(match.id)}
-            className="ml-auto text-xs px-2 py-1 rounded border border-border hover:bg-muted transition-colors"
-          >
-            {t("match.draw")}
-          </button>
-        )}
-        {!isReady && onUndo && match.winner && (
-          <button
-            onClick={() => onUndo(match.id)}
-            className="ml-auto text-xs px-2 py-1 rounded border border-destructive/30 text-destructive hover:bg-destructive/10 transition-colors"
-          >
-            {t("match.undo")}
-          </button>
-        )}
-        {!isReady && !match.winner && allowDraw && (
-          <span className="ml-auto text-xs px-2 py-1 invisible">{t("match.draw")}</span>
+        {/* allowDraw モード（総当り・スイス・とことん）: 引分/取消を同位置に固定 */}
+        {allowDraw && (
+          isReady ? (
+            <button
+              onClick={() => onDraw?.(match.id)}
+              className="ml-auto text-xs px-2 py-1 rounded border border-border hover:bg-muted transition-colors"
+            >
+              {t("match.draw")}
+            </button>
+          ) : onUndo && match.winner ? (
+            <button
+              onClick={() => onUndo(match.id)}
+              className="ml-auto text-xs px-2 py-1 rounded border border-destructive/30 text-destructive hover:bg-destructive/10 transition-colors"
+            >
+              {t("match.undo")}
+            </button>
+          ) : (
+            <span className="ml-auto text-xs px-2 py-1 invisible">{t("match.draw")}</span>
+          )
         )}
       </div>
       {match.winner && match.winner !== "draw" && (
-        <div className="mt-1">
+        <div className="mt-1 flex items-center justify-between">
           <span className="text-xs text-muted-foreground">
             {t("match.winner")} <Badge variant="secondary" className="text-xs">{match.winner}</Badge>
           </span>
+          {/* ブラケットモード（allowDraw なし）の取消は下段 */}
+          {!allowDraw && onUndo && (
+            <button
+              onClick={() => onUndo(match.id)}
+              className="text-xs px-2 py-0.5 rounded border border-destructive/30 text-destructive hover:bg-destructive/10 transition-colors"
+            >
+              {t("match.undo")}
+            </button>
+          )}
         </div>
       )}
       {match.winner === "draw" && (
