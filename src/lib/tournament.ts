@@ -7,6 +7,17 @@ export type TournamentMode =
   | "swiss"
   | "endless";
 
+export type ScoringRule = "3-1-0" | "2-1-0" | "1-0.5-0" | "1-0-0";
+
+export function calcPoints(rule: ScoringRule, result: "win" | "draw" | "loss"): number {
+  switch (rule) {
+    case "3-1-0": return result === "win" ? 3 : result === "draw" ? 1 : 0;
+    case "2-1-0": return result === "win" ? 2 : result === "draw" ? 1 : 0;
+    case "1-0.5-0": return result === "win" ? 1 : result === "draw" ? 0.5 : 0;
+    case "1-0-0": return result === "win" ? 1 : 0;
+  }
+}
+
 export interface Match {
   id: string;
   round: number;
@@ -42,6 +53,8 @@ export interface TournamentState {
   stations?: number;
   /** とことん対戦: 現在の試合で終了フラグ */
   lastRound?: boolean;
+  /** ポイント計算方式 */
+  scoring?: ScoringRule;
 }
 
 // === ユーティリティ ===
@@ -849,16 +862,18 @@ export function recordRoundRobinResult(
   const match = matches.find((m) => m.id === matchId);
   if (!match || match.winner) return state;
 
+  const rule = state.scoring ?? "3-1-0";
+
   if (winnerName === "draw") {
     match.winner = "draw";
     match.loser = "draw";
     const s1 = standings.find((s) => s.name === match.player1)!;
     const s2 = standings.find((s) => s.name === match.player2)!;
     s1.draws++;
-    s1.points += 1;
+    s1.points += calcPoints(rule, "draw");
     s1.matchesPlayed++;
     s2.draws++;
-    s2.points += 1;
+    s2.points += calcPoints(rule, "draw");
     s2.matchesPlayed++;
   } else {
     match.winner = winnerName;
@@ -867,7 +882,7 @@ export function recordRoundRobinResult(
     const winner = standings.find((s) => s.name === winnerName)!;
     const loser = standings.find((s) => s.name === match.loser)!;
     winner.wins++;
-    winner.points += 3;
+    winner.points += calcPoints(rule, "win");
     winner.matchesPlayed++;
     loser.losses++;
     loser.matchesPlayed++;
@@ -881,19 +896,19 @@ export function recordRoundRobinResult(
   return { ...state, matches, standings, isFinished };
 }
 
-function recalcStandings(players: string[], matches: Match[]): Standing[] {
+function recalcStandings(players: string[], matches: Match[], rule: ScoringRule = "3-1-0"): Standing[] {
   const standings = createStandings(players);
   for (const m of matches) {
     if (!m.winner) continue;
     if (m.winner === "draw") {
       const s1 = standings.find((s) => s.name === m.player1);
       const s2 = standings.find((s) => s.name === m.player2);
-      if (s1) { s1.draws++; s1.points += 1; s1.matchesPlayed++; }
-      if (s2) { s2.draws++; s2.points += 1; s2.matchesPlayed++; }
+      if (s1) { s1.draws++; s1.points += calcPoints(rule, "draw"); s1.matchesPlayed++; }
+      if (s2) { s2.draws++; s2.points += calcPoints(rule, "draw"); s2.matchesPlayed++; }
     } else if (m.winner !== "BYE") {
       const winner = standings.find((s) => s.name === m.winner);
       const loser = standings.find((s) => s.name === m.loser);
-      if (winner) { winner.wins++; winner.points += 3; winner.matchesPlayed++; }
+      if (winner) { winner.wins++; winner.points += calcPoints(rule, "win"); winner.matchesPlayed++; }
       if (loser && loser.name !== "BYE") { loser.losses++; loser.matchesPlayed++; }
     }
   }
@@ -912,7 +927,7 @@ export function undoRoundRobinResult(
   match.winner = null;
   match.loser = null;
 
-  const standings = recalcStandings(state.players, matches);
+  const standings = recalcStandings(state.players, matches, state.scoring ?? "3-1-0");
   return { ...state, matches, standings, isFinished: false };
 }
 
@@ -932,7 +947,7 @@ export function undoSwissResult(
   target.winner = null;
   target.loser = null;
 
-  const standings = recalcStandings(state.players, matches);
+  const standings = recalcStandings(state.players, matches, state.scoring ?? "3-1-0");
   const currentRound = match.round;
 
   return { ...state, matches, standings, currentRound, isFinished: false };
@@ -983,7 +998,7 @@ export function undoEndlessResult(
   target.winner = null;
   target.loser = null;
 
-  const standings = recalcStandings(state.players, matches);
+  const standings = recalcStandings(state.players, matches, state.scoring ?? "3-1-0");
   const currentRound = match.round;
 
   return { ...state, matches, standings, currentRound };
@@ -1098,16 +1113,18 @@ export function recordSwissResult(
   const match = matches.find((m) => m.id === matchId);
   if (!match || match.winner) return state;
 
+  const rule = state.scoring ?? "3-1-0";
+
   if (winnerName === "draw") {
     match.winner = "draw";
     match.loser = "draw";
     const s1 = standings.find((s) => s.name === match.player1)!;
     const s2 = standings.find((s) => s.name === match.player2)!;
     s1.draws++;
-    s1.points += 1;
+    s1.points += calcPoints(rule, "draw");
     s1.matchesPlayed++;
     s2.draws++;
-    s2.points += 1;
+    s2.points += calcPoints(rule, "draw");
     s2.matchesPlayed++;
   } else {
     match.winner = winnerName;
@@ -1116,7 +1133,7 @@ export function recordSwissResult(
     const winner = standings.find((s) => s.name === winnerName)!;
     const loser = standings.find((s) => s.name === match.loser)!;
     winner.wins++;
-    winner.points += 3;
+    winner.points += calcPoints(rule, "win");
     winner.matchesPlayed++;
     loser.losses++;
     loser.matchesPlayed++;
@@ -1286,16 +1303,18 @@ export function recordEndlessResult(
   const match = matches.find((m) => m.id === matchId);
   if (!match || match.winner) return state;
 
+  const rule = state.scoring ?? "3-1-0";
+
   if (winnerName === "draw") {
     match.winner = "draw";
     match.loser = "draw";
     const s1 = standings.find((s) => s.name === match.player1)!;
     const s2 = standings.find((s) => s.name === match.player2)!;
     s1.draws++;
-    s1.points += 1;
+    s1.points += calcPoints(rule, "draw");
     s1.matchesPlayed++;
     s2.draws++;
-    s2.points += 1;
+    s2.points += calcPoints(rule, "draw");
     s2.matchesPlayed++;
   } else {
     match.winner = winnerName;
@@ -1304,7 +1323,7 @@ export function recordEndlessResult(
     const winner = standings.find((s) => s.name === winnerName)!;
     const loser = standings.find((s) => s.name === match.loser)!;
     winner.wins++;
-    winner.points += 3;
+    winner.points += calcPoints(rule, "win");
     winner.matchesPlayed++;
     loser.losses++;
     loser.matchesPlayed++;
@@ -1336,4 +1355,19 @@ export function recordEndlessResult(
     currentRound: state.currentRound + 1,
     isFinished,
   };
+}
+
+export function changeScoring(
+  state: TournamentState,
+  newRule: ScoringRule
+): TournamentState {
+  if (
+    state.mode === "round-robin" ||
+    state.mode === "swiss" ||
+    state.mode === "endless"
+  ) {
+    const standings = recalcStandings(state.players, state.matches, newRule);
+    return { ...state, scoring: newRule, standings };
+  }
+  return { ...state, scoring: newRule };
 }

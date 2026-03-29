@@ -82,5 +82,12 @@
     "light": "Light",
     "dark": "Dark",
     "system": "Auto"
+  },
+  "scoring": {
+    "label": "Points",
+    "310": "W3/D1/L0",
+    "210": "W2/D1/L0",
+    "1050": "W1/D½/L0",
+    "100": "W1/D0/L0"
   }
 }

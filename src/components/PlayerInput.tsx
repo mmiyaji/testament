@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ModeIcon } from "@/components/ModeIcons";
-import type { TournamentMode } from "@/lib/tournament";
+import type { TournamentMode, ScoringRule } from "@/lib/tournament";
 
 const MODE_KEYS: TournamentMode[] = [
   "single-elimination",
@@ -18,13 +18,21 @@ function getSampleNames(t: ReturnType<typeof useTranslation>["t"]) {
   return Array.from({ length: 16 }, (_, i) => t("samples.player", { n: i + 1 }));
 }
 
+const SCORING_RULES: { value: ScoringRule; key: string }[] = [
+  { value: "3-1-0", key: "310" },
+  { value: "2-1-0", key: "210" },
+  { value: "1-0.5-0", key: "1050" },
+  { value: "1-0-0", key: "100" },
+];
+
 interface Props {
   onGenerate: (
     players: string[],
     mode: TournamentMode,
     shuffle: boolean,
     swissRounds?: number,
-    stations?: number
+    stations?: number,
+    scoring?: ScoringRule
   ) => void;
 }
 
@@ -37,6 +45,9 @@ export function PlayerInput({ onGenerate }: Props) {
   const [doShuffle, setDoShuffle] = useState(true);
   const [swissRounds, setSwissRounds] = useState(0);
   const [stations, setStations] = useState(1);
+  const [scoring, setScoring] = useState<ScoringRule>("3-1-0");
+
+  const allowScoring = mode === "round-robin" || mode === "swiss" || mode === "endless";
 
   const players = text
     .split("\n")
@@ -57,7 +68,7 @@ export function PlayerInput({ onGenerate }: Props) {
 
   const handleGenerate = () => {
     if (players.length < 2) return;
-    onGenerate(deduplicatedPlayers, mode, doShuffle, swissRounds || undefined, mode === "endless" ? stations : undefined);
+    onGenerate(deduplicatedPlayers, mode, doShuffle, swissRounds || undefined, mode === "endless" ? stations : undefined, allowScoring ? scoring : undefined);
   };
 
   const handleSampleAdd = () => {
@@ -170,7 +181,7 @@ export function PlayerInput({ onGenerate }: Props) {
       </Card>
 
       <Card>
-        <CardContent>
+        <CardContent className="flex items-center gap-3 flex-wrap">
           <button
             type="button"
             onClick={() => setDoShuffle((v) => !v)}
@@ -182,6 +193,20 @@ export function PlayerInput({ onGenerate }: Props) {
           >
             <span>{doShuffle ? t("input.shuffleOn") : t("input.shuffleOff")}</span>
           </button>
+          {allowScoring && (
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">{t("scoring.label")}:</span>
+              <select
+                value={scoring}
+                onChange={(e) => setScoring(e.target.value as ScoringRule)}
+                className="rounded border border-border bg-background px-2 py-1 text-sm"
+              >
+                {SCORING_RULES.map((r) => (
+                  <option key={r.value} value={r.value}>{t(`scoring.${r.key}`)}</option>
+                ))}
+              </select>
+            </div>
+          )}
         </CardContent>
       </Card>
 

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { PlayerInput } from "@/components/PlayerInput";
 import { TournamentView } from "@/components/TournamentView";
 import { PolicyModal } from "@/components/PolicyModal";
-import type { TournamentMode, TournamentState } from "@/lib/tournament";
+import type { TournamentMode, TournamentState, ScoringRule } from "@/lib/tournament";
 import {
   generateSingleElimination,
   generateDoubleElimination,
@@ -25,7 +25,8 @@ function App() {
     mode: TournamentMode,
     doShuffle: boolean,
     swissRounds?: number,
-    stations?: number
+    stations?: number,
+    scoring?: ScoringRule
   ) => {
     let state: TournamentState;
     switch (mode) {
@@ -45,6 +46,7 @@ function App() {
         state = generateEndless(players, doShuffle, stations);
         break;
     }
+    if (scoring) state = { ...state, scoring };
     setTournament(state);
   };
 

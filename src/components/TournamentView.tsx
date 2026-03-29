@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BracketView } from "./BracketView";
 import { MatchCard } from "./MatchCard";
 import { StandingsTable } from "./StandingsTable";
-import type { TournamentState } from "@/lib/tournament";
+import type { TournamentState, ScoringRule } from "@/lib/tournament";
 import {
   recordSingleEliminationResult,
   recordDoubleEliminationResult,
@@ -20,6 +20,7 @@ import {
   undoSwissResult,
   undoEndlessResult,
   changeEndlessStations,
+  changeScoring,
   computeEliminationStandings,
 } from "@/lib/tournament";
 
@@ -103,6 +104,13 @@ export function TournamentView({ state, onStateChange, onReset }: Props) {
     state.mode === "swiss" ||
     state.mode === "endless";
 
+  const SCORING_RULES: { value: ScoringRule; key: string }[] = [
+    { value: "3-1-0", key: "310" },
+    { value: "2-1-0", key: "210" },
+    { value: "1-0.5-0", key: "1050" },
+    { value: "1-0-0", key: "100" },
+  ];
+
   const champions: string[] = (() => {
     if (!state.isFinished) return [];
     if (
@@ -160,6 +168,20 @@ export function TournamentView({ state, onStateChange, onReset }: Props) {
                 </button>
               </div>
             </>
+          )}
+          {allowDraw && (
+            <div className="flex items-center gap-1">
+              <span className="text-xs text-muted-foreground">{t("scoring.label")}:</span>
+              <select
+                value={state.scoring ?? "3-1-0"}
+                onChange={(e) => onStateChange(changeScoring(state, e.target.value as ScoringRule))}
+                className="rounded border border-border bg-background px-1.5 py-0.5 text-xs"
+              >
+                {SCORING_RULES.map((r) => (
+                  <option key={r.value} value={r.value}>{t(`scoring.${r.key}`)}</option>
+                ))}
+              </select>
+            </div>
           )}
         </div>
         <div className="flex items-center gap-2">
