@@ -8,6 +8,12 @@ type Theme = "light" | "dark" | "system";
 const LANGUAGES = [
   { code: "ja", label: "日本語" },
   { code: "en", label: "English" },
+  { code: "zh", label: "中文" },
+  { code: "ko", label: "한국어" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+  { code: "de", label: "Deutsch" },
+  { code: "pt", label: "Português" },
 ];
 
 function getInitialTheme(): Theme {
@@ -60,7 +66,7 @@ export function PolicyModal({ compact }: { compact?: boolean }) {
         </button>
         <span>·</span>
         <select
-          value={i18n.language.startsWith("ja") ? "ja" : i18n.language.startsWith("en") ? "en" : i18n.language}
+          value={LANGUAGES.find((l) => i18n.language.startsWith(l.code))?.code ?? "ja"}
           onChange={(e) => i18n.changeLanguage(e.target.value)}
           className="bg-transparent border border-border rounded px-1 py-0.5 text-xs cursor-pointer"
         >

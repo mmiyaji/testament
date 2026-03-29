@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "간단한 토너먼트 생성 도구"
+  },
+  "input": {
+    "enterPlayers": "참가자 입력",
+    "playerCount": "{{count}}명",
+    "remove": "− 삭제",
+    "add": "+ 추가",
+    "placeholder": "한 줄에 한 명씩 입력...",
+    "mode": "대전 방식",
+    "swissRounds": "라운드 수:",
+    "stations": "대전 테이블:",
+    "shuffleOn": "셔플 ON",
+    "shuffleOff": "셔플 OFF",
+    "generate": "토너먼트 생성"
+  },
+  "modes": {
+    "single-elimination": "싱글 엘리미네이션",
+    "single-elimination-desc": "한 번 지면 탈락",
+    "double-elimination": "더블 엘리미네이션",
+    "double-elimination-desc": "두 번 지면 탈락 (패자부활전 포함)",
+    "round-robin": "리그전 (풀리그)",
+    "round-robin-desc": "모든 참가자가 서로 대전",
+    "swiss": "스위스 방식",
+    "swiss-desc": "동일 성적끼리 매칭",
+    "endless": "무한 대전",
+    "endless-desc": "균등한 경기 수, 연속 대전 회피"
+  },
+  "tournament": {
+    "playerCount": "{{count}}명",
+    "matchNumber": "제{{round}}경기",
+    "stationCount": "{{count}}테이블",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "이번 경기로 종료",
+    "reserveEnd": "종료 예약",
+    "reset": "처음으로",
+    "champion": "우승",
+    "tiedFirst": "공동 1위",
+    "endlessHint": "승자를 클릭하면 다음 경기가 자동 생성됩니다.",
+    "endlessHintSub": "종료할 때는 「처음으로」를 누르세요.",
+    "winners": "승자조",
+    "losers": "패자조",
+    "grandFinal": "그랜드 파이널",
+    "standings": "순위표",
+    "matchTable": "대전표",
+    "round": "{{round}}라운드",
+    "inProgress": "진행 중",
+    "matchHistory": "대전 기록"
+  },
+  "match": {
+    "bye": "（부전승）",
+    "draw": "무승부",
+    "drawResult": "무승부",
+    "winner": "승자:",
+    "undo": "취소",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "이름",
+    "wins": "승",
+    "losses": "패",
+    "draws": "무",
+    "matches": "경기"
+  },
+  "bracket": {
+    "final": "결승",
+    "semiFinal": "준결승",
+    "round": "{{round}}라운드"
+  },
+  "policy": {
+    "terms": "이용약관",
+    "privacy": "개인정보처리방침",
+    "termsContent": "# 이용약관\n\n최종 업데이트: 2026년 3월 29일\n\n## 1. 서비스 개요\n\nTestament(이하 '본 서비스')는 토너먼트 대진표 생성을 지원하는 무료 웹 애플리케이션입니다.\n\n## 2. 이용 조건\n\n- 본 서비스는 개인 및 법인 모두 무료로 이용할 수 있습니다.\n- 계정 등록이 필요하지 않습니다.\n\n## 3. 면책사항\n\n- 본 서비스는 어떠한 보증도 제공하지 않습니다.\n- 운영자는 본 서비스 이용으로 발생한 어떠한 손해에 대해서도 책임을 지지 않습니다.\n\n## 4. 금지 사항\n\n- 본 서비스에 대한 불법 접근 또는 방해\n- 법령에 위반되는 목적으로의 이용\n\n## 5. 변경 및 종료\n\n운영자는 사전 고지 없이 본 서비스를 변경하거나 종료할 수 있습니다.\n\n## 6. 준거법\n\n본 약관은 일본법에 따릅니다.",
+    "privacyContent": "# 개인정보처리방침\n\n최종 업데이트: 2026년 3월 29일\n\n## 1. 수집하는 정보\n\n본 서비스는 개인정보를 수집하지 않습니다. 입력한 참가자 이름 등의 데이터는 브라우저 메모리에서만 처리되며, 서버로 전송되거나 저장되지 않습니다.\n\n## 2. 접근 분석\n\n본 서비스는 이용 현황 파악을 위해 Cloudflare Web Analytics를 사용합니다.\n\n- 쿠키를 사용하지 않습니다.\n- 개인을 식별하는 정보는 수집하지 않습니다.\n- 수집 데이터: 페이지뷰, 브라우저/OS, 국가/지역, 유입 URL. IP 주소는 익명 처리됩니다.\n\n## 3. 입력 데이터 처리\n\n- 영구 저장 없음 — 페이지를 닫으면 모든 입력 데이터가 삭제됩니다.\n- 외부 전송 없음 — 참가자 이름 등의 입력 데이터는 외부로 전송되지 않습니다.\n\n## 4. 제3자 제공\n\n입력 데이터는 제3자에게 제공하지 않습니다.\n\n## 5. 문의\n\n본 방침에 관한 문의는 서비스 저장소의 Issue를 통해 연락해 주세요.\n\n## 6. 변경\n\n본 방침은 사전 고지 없이 변경될 수 있습니다."
+  },
+  "samples": {
+    "player": "플레이어{{n}}"
+  },
+  "theme": {
+    "light": "라이트",
+    "dark": "다크",
+    "system": "자동"
+  },
+  "scoring": {
+    "label": "포인트",
+    "310": "승3/무1/패0",
+    "210": "승2/무1/패0",
+    "1050": "승1/무1/2/패0",
+    "100": "승1/무0/패0"
+  }
+}

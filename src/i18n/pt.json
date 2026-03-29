@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "Gerador de torneios simplificado"
+  },
+  "input": {
+    "enterPlayers": "Inserir participantes",
+    "playerCount": "{{count}} jogadores",
+    "remove": "− Remover",
+    "add": "+ Adicionar",
+    "placeholder": "Um nome por linha...",
+    "mode": "Formato",
+    "swissRounds": "Rodadas:",
+    "stations": "Mesas:",
+    "shuffleOn": "Aleatório ON",
+    "shuffleOff": "Aleatório OFF",
+    "generate": "Gerar torneio"
+  },
+  "modes": {
+    "single-elimination": "Eliminação simples",
+    "single-elimination-desc": "Eliminado após uma derrota",
+    "double-elimination": "Eliminação dupla",
+    "double-elimination-desc": "Eliminado após 2 derrotas (com bracket de perdedores)",
+    "round-robin": "Round Robin",
+    "round-robin-desc": "Todos jogam contra todos",
+    "swiss": "Sistema Suíço",
+    "swiss-desc": "Emparelhamento por pontuação similar",
+    "endless": "Modo infinito",
+    "endless-desc": "Partidas equilibradas, sem rematches consecutivos"
+  },
+  "tournament": {
+    "playerCount": "{{count}} jogadores",
+    "matchNumber": "Partida #{{round}}",
+    "stationCount": "{{count}} mesas",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "Encerrar após esta rodada",
+    "reserveEnd": "Agendar fim",
+    "reset": "Voltar ao início",
+    "champion": "Campeão",
+    "tiedFirst": "Empate em 1.°",
+    "endlessHint": "Clique no vencedor para gerar a próxima partida.",
+    "endlessHintSub": "Pressione «Voltar ao início» quando terminar.",
+    "winners": "Vencedores",
+    "losers": "Perdedores",
+    "grandFinal": "Grande Final",
+    "standings": "Classificação",
+    "matchTable": "Tabela de partidas",
+    "round": "Rodada {{round}}",
+    "inProgress": "Em andamento",
+    "matchHistory": "Histórico de partidas"
+  },
+  "match": {
+    "bye": "(Bye)",
+    "draw": "Empate",
+    "drawResult": "Empate",
+    "winner": "Vencedor:",
+    "undo": "Desfazer",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "Nome",
+    "wins": "V",
+    "losses": "D",
+    "draws": "E",
+    "matches": "PJ"
+  },
+  "bracket": {
+    "final": "Final",
+    "semiFinal": "Semifinal",
+    "round": "Rodada {{round}}"
+  },
+  "policy": {
+    "terms": "Termos de uso",
+    "privacy": "Política de privacidade",
+    "termsContent": "# Termos de uso\n\nÚltima atualização: 29 de março de 2026\n\n## 1. Descrição do serviço\n\nTestament (doravante «o Serviço») é um aplicativo web gratuito para gerar brackets de torneios.\n\n## 2. Condições de uso\n\n- O Serviço é gratuito para pessoas físicas e organizações.\n- Não é necessário registro de conta.\n\n## 3. Aviso legal\n\n- O Serviço é fornecido sem garantias de qualquer tipo.\n- O operador não é responsável por danos decorrentes do uso do Serviço.\n\n## 4. Atividades proibidas\n\n- Acesso não autorizado ou interferência com o Serviço\n- Uso para fins ilegais\n\n## 5. Alterações e encerramento\n\nO operador pode modificar ou encerrar o Serviço sem aviso prévio.\n\n## 6. Lei aplicável\n\nEstes termos são regidos pelas leis do Japão.",
+    "privacyContent": "# Política de privacidade\n\nÚltima atualização: 29 de março de 2026\n\n## 1. Informações coletadas\n\nEste Serviço não coleta informações pessoais. Os dados inseridos, como nomes de participantes, são processados apenas na memória do navegador e não são enviados a nenhum servidor.\n\n## 2. Análise de acesso\n\nEste Serviço usa o Cloudflare Web Analytics para entender padrões de uso.\n\n- Nenhum cookie é utilizado.\n- Nenhuma informação de identificação pessoal é coletada.\n- Dados coletados: visualizações de página, navegador/SO, país/região, URL de referência. Endereços IP são anonimizados.\n\n## 3. Dados inseridos\n\n- Sem persistência — Todos os dados são excluídos ao fechar a página.\n- Sem transmissão externa — Nomes de participantes e outros dados inseridos nunca são enviados externamente.\n\n## 4. Compartilhamento com terceiros\n\nOs dados inseridos não são compartilhados com terceiros.\n\n## 5. Contato\n\nPara dúvidas sobre esta política, use a seção Issues do repositório do Serviço.\n\n## 6. Alterações\n\nEsta política pode ser alterada sem aviso prévio."
+  },
+  "samples": {
+    "player": "Jogador {{n}}"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Auto"
+  },
+  "scoring": {
+    "label": "Pontos",
+    "310": "V3/E1/D0",
+    "210": "V2/E1/D0",
+    "1050": "V1/E1/2/D0",
+    "100": "V1/E0/D0"
+  }
+}

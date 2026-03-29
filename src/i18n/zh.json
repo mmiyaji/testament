@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "简易赛制生成工具"
+  },
+  "input": {
+    "enterPlayers": "输入参赛者",
+    "playerCount": "{{count}} 人",
+    "remove": "− 删除",
+    "add": "+ 添加",
+    "placeholder": "每行输入一个名字...",
+    "mode": "赛制",
+    "swissRounds": "轮数:",
+    "stations": "台数:",
+    "shuffleOn": "随机 开",
+    "shuffleOff": "随机 关",
+    "generate": "生成赛程"
+  },
+  "modes": {
+    "single-elimination": "单败淘汰",
+    "single-elimination-desc": "负一场即淘汰",
+    "double-elimination": "双败淘汰",
+    "double-elimination-desc": "负两场淘汰（含败者组）",
+    "round-robin": "循环赛",
+    "round-robin-desc": "所有人互相对战",
+    "swiss": "瑞士制",
+    "swiss-desc": "按积分匹配对手",
+    "endless": "无限对战",
+    "endless-desc": "均衡场数·避免连续重赛"
+  },
+  "tournament": {
+    "playerCount": "{{count}}人",
+    "matchNumber": "第{{round}}场",
+    "stationCount": "{{count}}台",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "本轮后结束",
+    "reserveEnd": "预约结束",
+    "reset": "返回开始",
+    "champion": "冠军",
+    "tiedFirst": "并列第一",
+    "endlessHint": "点击胜者自动生成下一场对战。",
+    "endlessHintSub": "结束时请点击「返回开始」。",
+    "winners": "胜者组",
+    "losers": "败者组",
+    "grandFinal": "总决赛",
+    "standings": "排名",
+    "matchTable": "对战表",
+    "round": "第{{round}}轮",
+    "inProgress": "进行中",
+    "matchHistory": "对战历史"
+  },
+  "match": {
+    "bye": "（轮空）",
+    "draw": "平局",
+    "drawResult": "平局",
+    "winner": "胜者:",
+    "undo": "撤销",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "名字",
+    "wins": "胜",
+    "losses": "负",
+    "draws": "平",
+    "matches": "场次"
+  },
+  "bracket": {
+    "final": "决赛",
+    "semiFinal": "半决赛",
+    "round": "第{{round}}轮"
+  },
+  "policy": {
+    "terms": "使用条款",
+    "privacy": "隐私政策",
+    "termsContent": "# 使用条款\n\n最后更新: 2026年3月29日\n\n## 1. 服务概述\n\nTestament（以下简称「本服务」）是一款免费的赛制生成网页应用。\n\n## 2. 使用条件\n\n- 本服务对个人及团体均免费开放。\n- 无需注册账户。\n\n## 3. 免责声明\n\n- 本服务不提供任何保证。\n- 运营者对因使用本服务造成的任何损失概不负责。\n\n## 4. 禁止行为\n\n- 非法访问或干扰本服务\n- 违法目的使用\n\n## 5. 变更与终止\n\n运营者可能在不事先通知的情况下变更或终止本服务。\n\n## 6. 适用法律\n\n本条款适用日本法律。",
+    "privacyContent": "# 隐私政策\n\n最后更新: 2026年3月29日\n\n## 1. 收集的信息\n\n本服务不收集任何个人信息。输入的参赛者姓名等数据仅在浏览器内存中处理，不会发送到服务器。\n\n## 2. 访问分析\n\n本服务使用 Cloudflare Web Analytics 了解使用情况。\n\n- 不使用 Cookie。\n- 不收集个人身份信息。\n- 收集内容: 页面浏览量、浏览器/OS、国家/地区、来源URL。IP地址已匿名化处理。\n\n## 3. 输入数据处理\n\n- 无持久化 — 关闭页面后所有输入数据均被清除。\n- 无外部传输 — 参赛者姓名等输入数据不会对外传输。\n\n## 4. 第三方共享\n\n输入数据不会提供给第三方。\n\n## 5. 联系方式\n\n如有疑问，请通过本服务仓库的 Issue 联系我们。\n\n## 6. 变更\n\n本政策可能在不事先通知的情况下变更。"
+  },
+  "samples": {
+    "player": "选手{{n}}"
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "system": "自动"
+  },
+  "scoring": {
+    "label": "积分",
+    "310": "胜3/平1/负0",
+    "210": "胜2/平1/负0",
+    "1050": "胜1/平1/2/负0",
+    "100": "胜1/平0/负0"
+  }
+}

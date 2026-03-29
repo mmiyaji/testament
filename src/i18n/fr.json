@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "Générateur de tournois simplifié"
+  },
+  "input": {
+    "enterPlayers": "Saisir les participants",
+    "playerCount": "{{count}} joueurs",
+    "remove": "− Supprimer",
+    "add": "+ Ajouter",
+    "placeholder": "Un nom par ligne...",
+    "mode": "Format",
+    "swissRounds": "Rondes :",
+    "stations": "Tables :",
+    "shuffleOn": "Aléatoire ON",
+    "shuffleOff": "Aléatoire OFF",
+    "generate": "Générer le tournoi"
+  },
+  "modes": {
+    "single-elimination": "Élimination simple",
+    "single-elimination-desc": "Éliminé dès la première défaite",
+    "double-elimination": "Double élimination",
+    "double-elimination-desc": "Éliminé après 2 défaites (avec bracket des perdants)",
+    "round-robin": "Round Robin",
+    "round-robin-desc": "Tout le monde joue contre tout le monde",
+    "swiss": "Système suisse",
+    "swiss-desc": "Appariement par score similaire",
+    "endless": "Mode infini",
+    "endless-desc": "Parties équilibrées, sans rematches consécutifs"
+  },
+  "tournament": {
+    "playerCount": "{{count}} joueurs",
+    "matchNumber": "Partie n°{{round}}",
+    "stationCount": "{{count}} tables",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "Terminer après ce tour",
+    "reserveEnd": "Planifier la fin",
+    "reset": "Retour au début",
+    "champion": "Champion",
+    "tiedFirst": "Ex æquo 1er",
+    "endlessHint": "Cliquez sur le gagnant pour générer la prochaine partie.",
+    "endlessHintSub": "Appuyez sur « Retour au début » quand vous avez terminé.",
+    "winners": "Gagnants",
+    "losers": "Perdants",
+    "grandFinal": "Grande Finale",
+    "standings": "Classement",
+    "matchTable": "Tableau des matchs",
+    "round": "Ronde {{round}}",
+    "inProgress": "En cours",
+    "matchHistory": "Historique des matchs"
+  },
+  "match": {
+    "bye": "(Exempt)",
+    "draw": "Nul",
+    "drawResult": "Match nul",
+    "winner": "Gagnant :",
+    "undo": "Annuler",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "Nom",
+    "wins": "V",
+    "losses": "D",
+    "draws": "N",
+    "matches": "MJ"
+  },
+  "bracket": {
+    "final": "Finale",
+    "semiFinal": "Demi-finale",
+    "round": "Ronde {{round}}"
+  },
+  "policy": {
+    "terms": "Conditions d'utilisation",
+    "privacy": "Politique de confidentialité",
+    "termsContent": "# Conditions d'utilisation\n\nDernière mise à jour : 29 mars 2026\n\n## 1. Description du service\n\nTestament (ci-après « le Service ») est une application web gratuite pour générer des brackets de tournois.\n\n## 2. Conditions d'utilisation\n\n- Le Service est gratuit pour les particuliers et les organisations.\n- Aucune inscription n'est requise.\n\n## 3. Avertissement\n\n- Le Service est fourni sans aucune garantie.\n- L'opérateur n'est pas responsable des dommages découlant de l'utilisation du Service.\n\n## 4. Activités interdites\n\n- Accès non autorisé ou interférence avec le Service\n- Utilisation à des fins illégales\n\n## 5. Modifications et résiliation\n\nL'opérateur peut modifier ou résilier le Service sans préavis.\n\n## 6. Droit applicable\n\nCes conditions sont régies par le droit japonais.",
+    "privacyContent": "# Politique de confidentialité\n\nDernière mise à jour : 29 mars 2026\n\n## 1. Informations collectées\n\nCe Service ne collecte aucune information personnelle. Les données telles que les noms des participants sont traitées uniquement dans la mémoire du navigateur et ne sont pas envoyées à un serveur.\n\n## 2. Analyse d'audience\n\nCe Service utilise Cloudflare Web Analytics pour comprendre les tendances d'utilisation.\n\n- Aucun cookie n'est utilisé.\n- Aucune information d'identification personnelle n'est collectée.\n- Données collectées : pages vues, navigateur/OS, pays/région, URL de référence. Les adresses IP sont anonymisées.\n\n## 3. Données saisies\n\n- Pas de persistance — Toutes les données sont supprimées à la fermeture de la page.\n- Pas de transmission externe — Les noms et autres données saisies ne sont jamais envoyés à l'extérieur.\n\n## 4. Partage avec des tiers\n\nLes données saisies ne sont jamais partagées avec des tiers.\n\n## 5. Contact\n\nPour toute question concernant cette politique, utilisez la section Issues du dépôt du Service.\n\n## 6. Modifications\n\nCette politique peut être modifiée sans préavis."
+  },
+  "samples": {
+    "player": "Joueur {{n}}"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Auto"
+  },
+  "scoring": {
+    "label": "Points",
+    "310": "V3/N1/D0",
+    "210": "V2/N1/D0",
+    "1050": "V1/N1/2/D0",
+    "100": "V1/N0/D0"
+  }
+}

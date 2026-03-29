@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "Testament",
+    "subtitle": "Einfacher Turniergenerator"
+  },
+  "input": {
+    "enterPlayers": "Teilnehmer eingeben",
+    "playerCount": "{{count}} Spieler",
+    "remove": "− Entfernen",
+    "add": "+ Hinzufügen",
+    "placeholder": "Ein Name pro Zeile...",
+    "mode": "Format",
+    "swissRounds": "Runden:",
+    "stations": "Tische:",
+    "shuffleOn": "Zufall AN",
+    "shuffleOff": "Zufall AUS",
+    "generate": "Turnier generieren"
+  },
+  "modes": {
+    "single-elimination": "Einfache Eliminierung",
+    "single-elimination-desc": "Eine Niederlage bedeutet Ausscheiden",
+    "double-elimination": "Doppelte Eliminierung",
+    "double-elimination-desc": "Ausscheiden nach 2 Niederlagen (mit Verlierer-Bracket)",
+    "round-robin": "Round Robin",
+    "round-robin-desc": "Jeder spielt gegen jeden",
+    "swiss": "Schweizer System",
+    "swiss-desc": "Paarung nach ähnlichem Punktestand",
+    "endless": "Endlosmodus",
+    "endless-desc": "Ausgeglichene Spielanzahl, keine direkten Rematches"
+  },
+  "tournament": {
+    "playerCount": "{{count}} Spieler",
+    "matchNumber": "Partie #{{round}}",
+    "stationCount": "{{count}} Tische",
+    "swissRound": "R{{current}}/{{total}}",
+    "endThisMatch": "Nach dieser Runde beenden",
+    "reserveEnd": "Ende planen",
+    "reset": "Zurück zum Start",
+    "champion": "Champion",
+    "tiedFirst": "Gleichstand Platz 1",
+    "endlessHint": "Klicke auf den Gewinner, um das nächste Spiel zu generieren.",
+    "endlessHintSub": "Drücke «Zurück zum Start», wenn du fertig bist.",
+    "winners": "Gewinner",
+    "losers": "Verlierer",
+    "grandFinal": "Großes Finale",
+    "standings": "Tabelle",
+    "matchTable": "Spielplan",
+    "round": "Runde {{round}}",
+    "inProgress": "Laufend",
+    "matchHistory": "Spielverlauf"
+  },
+  "match": {
+    "bye": "(Freilos)",
+    "draw": "Unentschieden",
+    "drawResult": "Unentschieden",
+    "winner": "Gewinner:",
+    "undo": "Rückgängig",
+    "vs": "VS"
+  },
+  "standings": {
+    "name": "Name",
+    "wins": "S",
+    "losses": "N",
+    "draws": "U",
+    "matches": "Sp"
+  },
+  "bracket": {
+    "final": "Finale",
+    "semiFinal": "Halbfinale",
+    "round": "Runde {{round}}"
+  },
+  "policy": {
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutzrichtlinie",
+    "termsContent": "# Nutzungsbedingungen\n\nLetzte Aktualisierung: 29. März 2026\n\n## 1. Dienstbeschreibung\n\nTestament (nachfolgend «der Dienst») ist eine kostenlose Webanwendung zur Erstellung von Turnierplänen.\n\n## 2. Nutzungsbedingungen\n\n- Der Dienst ist für Einzelpersonen und Organisationen kostenlos.\n- Eine Kontoregistrierung ist nicht erforderlich.\n\n## 3. Haftungsausschluss\n\n- Der Dienst wird ohne jegliche Gewährleistung bereitgestellt.\n- Der Betreiber haftet nicht für Schäden, die aus der Nutzung des Dienstes entstehen.\n\n## 4. Verbotene Aktivitäten\n\n- Unbefugter Zugriff auf oder Störung des Dienstes\n- Nutzung zu illegalen Zwecken\n\n## 5. Änderungen und Einstellung\n\nDer Betreiber kann den Dienst ohne vorherige Ankündigung ändern oder einstellen.\n\n## 6. Anwendbares Recht\n\nDiese Bedingungen unterliegen japanischem Recht.",
+    "privacyContent": "# Datenschutzrichtlinie\n\nLetzte Aktualisierung: 29. März 2026\n\n## 1. Erhobene Daten\n\nDieser Dienst erhebt keine personenbezogenen Daten. Eingegebene Daten wie Teilnehmernamen werden ausschließlich im Browserspeicher verarbeitet und nicht an Server übertragen.\n\n## 2. Analysedienste\n\nDieser Dienst verwendet Cloudflare Web Analytics.\n\n- Es werden keine Cookies verwendet.\n- Es werden keine personenbezogenen Daten erhoben.\n- Erhobene Daten: Seitenaufrufe, Browser/OS, Land/Region, Referrer-URL. IP-Adressen werden anonymisiert.\n\n## 3. Eingabedaten\n\n- Keine Persistenz — Alle Eingabedaten werden beim Schließen der Seite gelöscht.\n- Keine externe Übertragung — Teilnehmernamen und andere Eingabedaten werden nicht extern übertragen.\n\n## 4. Weitergabe an Dritte\n\nEingabedaten werden nicht an Dritte weitergegeben.\n\n## 5. Kontakt\n\nFragen zu dieser Richtlinie richten Sie bitte über die Issues des Service-Repositorys an uns.\n\n## 6. Änderungen\n\nDiese Richtlinie kann ohne vorherige Ankündigung geändert werden."
+  },
+  "samples": {
+    "player": "Spieler {{n}}"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "Auto"
+  },
+  "scoring": {
+    "label": "Punkte",
+    "310": "S3/U1/N0",
+    "210": "S2/U1/N0",
+    "1050": "S1/U1/2/N0",
+    "100": "S1/U0/N0"
+  }
+}
