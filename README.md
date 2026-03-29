@@ -4,6 +4,8 @@
 
 シンプルなトーナメント生成ツールです。
 
+> **Test** + **Tournament** = **Testament**
+
 ## スクリーンショット
 
 ### シングルエリミネーション
@@ -46,6 +48,10 @@ npm run dev
 ```bash
 npx playwright test
 ```
+
+## ライセンス
+
+[MIT](LICENSE)
 
 ## ビルド・デプロイ
 
